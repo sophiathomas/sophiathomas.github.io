@@ -1,0 +1,42 @@
+@viewport { width: device-width; }
+
+html {
+  background-color: $color-background;
+  font-family: $font-family-base;
+  color: $color-text;
+  
+  box-sizing: border-box; // Set up a decent box model on the root element
+  vertical-align: baseline;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  &:before,
+  &:after { box-sizing: inherit; }
+}
+
+body {
+  font-family: inherit;
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  
+  min-height: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  background: transparent;
+  color: $color-link;
+  text-decoration: none;
+  transition: color .2s;
+}

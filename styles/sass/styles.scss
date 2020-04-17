@@ -1,5 +1,41 @@
-$font-stack: Helvetica, sans-serif;
+@charset 'utf-8';
 
-body {
-  font: $font-stack;
-}
+// 1. Configuration and helpers
+@import
+  'utilities/config',
+  'utilities/functions',
+  'utilities/mixins',
+  'utilities/fonts',
+  'utilities/typography',
+  'utilities/colours';
+
+// 2. Vendors
+@import
+  'vendors/normalize',
+  'vendors/pesticide';
+
+// 3. Base stuff
+@import
+  'base/reset',
+  'base/typesetting',
+  'base/helpers';
+
+// 4. Layout-related sections
+// @import
+//  'partials/';
+
+// 5. Components
+// @import
+//   'components/';
+
+// 6. Page-specific styles
+@import
+  'pages/landing';
+
+// 7. Themes
+// @import
+//  'themes/';
+
+// 8. Because hacks happen.
+// @import
+//  'shame';

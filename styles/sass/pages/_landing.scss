@@ -1,0 +1,14 @@
+h1.display-title {
+  font-family: $font-family-alt;
+}
+
+.centered-content {
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+  margin: 10px 120px;
+  padding: 30px;
+}
