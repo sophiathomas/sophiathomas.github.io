@@ -4,7 +4,7 @@
 /// @example scss - When using a CDN
 /// $asset-url: 'http://cdn.example.com/assets/';
 ///
-$asset-url: '../../assets/' !default;
+$asset-url: '../assets/' !default;
 
 
 /// Google Fonts URL where all the fonts will be loaded
@@ -49,6 +49,7 @@ $z-indexes: (
 );
 
 
+
 /// Font weight map
 /// @prop {String} key - Keys are identifiers mapped to a given weight
 /// @prop {Map} values - Values are weights expressed in numeric weight
@@ -63,7 +64,6 @@ $font-weights: (
   'xbold': 800,
   'black': 900,
  );
-
 
 
 /// Websafe Font Stacks
