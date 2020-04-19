@@ -1,14 +1,51 @@
+body {
+  background-image: url('../assets/img/bg_seigaiha.png'); 
+}
+
 h1.display-title {
-  font-family: $font-family-alt;
+  span {
+    font-family: $font-family-alt;
+  }
 }
 
 .centered-content {
-    height:100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column nowrap;
 }
-section {
-  margin: 10px 120px;
-  padding: 30px;
+
+main {
+  margin: 50px 100px 20px;
+  padding: 20px;
+}
+
+.meishi {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+  max-width: 100px;
+  margin: 10px;
+  padding: 10px;
+  writing-mode: vertical-rl;
+
+  p {
+    margin: 0;
+  }
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

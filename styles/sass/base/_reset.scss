@@ -29,6 +29,13 @@ img {
   max-width: 100%;
 }
 
+[lang="jp"] {
+  font-family: $font-family-jp;
+  p {
+   margin: 0; 
+  }
+}
+
 a {
   background: transparent;
   color: $color-link;

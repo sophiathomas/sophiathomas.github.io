@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Noto+Serif+JP:wght@300&family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Noto+Serif+JP:wght@300&family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 @viewport {
   width: device-width; }
-html {
+html, body {
   background-color: #fff;
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
   color: #484c55;
@@ -16,8 +16,6 @@ html {
   box-sizing: inherit; }
 
 body {
-  font-family: inherit;
-  color: inherit;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -27,30 +25,60 @@ img {
   height: auto;
   max-width: 100%; }
 
+[lang="jp"] {
+  font-family: "Noto Serif JP", serif; }
+  [lang="jp"] p {
+    margin: 0; }
+
 a {
   background: transparent;
   color: #c69;
-  text-decoration: none;
   transition: color .2s; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif; }
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 500; }
 
 p {
-  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
-  font-weight: 300; }
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif; }
 
-h1.display-title {
+body {
+  background-image: url("../assets/img/bg_seigaiha.png"); }
+
+h1.display-title span {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .centered-content {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-flow: column nowrap; }
 
-section {
-  margin: 10px 120px;
-  padding: 30px; }
+main {
+  margin: 50px 100px 20px;
+  padding: 20px; }
+
+.meishi {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
+  max-width: 100px;
+  margin: 10px;
+  padding: 10px;
+  writing-mode: vertical-rl; }
+  .meishi p {
+    margin: 0; }
+
+.rotate {
+  animation: rotation 8s infinite linear; }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
 
 /*# sourceMappingURL=styles.css.map */
