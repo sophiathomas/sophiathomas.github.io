@@ -22,6 +22,20 @@ main {
   padding: 20px;
 }
 
+ol.ext-nav {
+  list-style: none;
+  counter-reset: links;
+  padding-left: 0px;
+
+  li {
+    counter-increment: links;
+    display: inline-block;
+    margin-right: 20px;
+    &::before {
+      content: counter(links, decimal-leading-zero) " / ";
+    }
+  }
+}
 .meishi {
   position: fixed;
   top: 50%;

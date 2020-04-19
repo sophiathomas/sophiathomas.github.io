@@ -60,6 +60,17 @@ main {
   margin: 50px 100px 20px;
   padding: 20px; }
 
+ol.ext-nav {
+  list-style: none;
+  counter-reset: links;
+  padding-left: 0px; }
+  ol.ext-nav li {
+    counter-increment: links;
+    display: inline-block;
+    margin-right: 20px; }
+    ol.ext-nav li::before {
+      content: counter(links,decimal-leading-zero) " / "; }
+
 .meishi {
   position: fixed;
   top: 50%;
