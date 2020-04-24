@@ -42,11 +42,39 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif; }
 
-body {
-  background-image: url("../assets/img/bg_seigaiha.png"); }
+body::before, body::after, html::before, html::after {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: 1; }
+body::before, html::before {
+  border-top: solid 3px black;
+  left: 20px;
+  right: 20px; }
+body::after, html::after {
+  border-right: solid 3px black;
+  top: 20px;
+  bottom: 20px; }
 
-h1.display-title span {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+html::before {
+  top: 20px; }
+html::after {
+  right: 20px; }
+
+body {
+  padding: 20px; }
+  body::before {
+    bottom: 20px; }
+  body::after {
+    left: 20px; }
+
+h1.display-title {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  text-transform: uppercase;
+  font-weight: bold; }
 
 .centered-content {
   min-height: 100vh;
@@ -58,7 +86,24 @@ h1.display-title span {
 
 main {
   margin: 50px 100px 20px;
-  padding: 20px; }
+  padding: 20px 70px 20px 100px;
+  position: relative;
+  z-index: 1; }
+  main::after, main::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 100%;
+    border-radius: 100%;
+    z-index: -1;
+    background-image: linear-gradient(transparent, blue);
+    transform: translate(-50px, -20px); }
+  main::before {
+    background-image: linear-gradient(transparent, yellow);
+    transform: translate(50px, -50px); }
 
 ol.ext-nav {
   list-style: none;
@@ -73,11 +118,10 @@ ol.ext-nav {
 
 .meishi {
   position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
+  top: 0;
   right: 0;
   max-width: 100px;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   writing-mode: vertical-rl; }
   .meishi p {

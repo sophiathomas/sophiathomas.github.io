@@ -1,25 +1,90 @@
-body {
-  background-image: url('../assets/img/bg_seigaiha.png'); 
-}
+$border-margin: 20px;
 
-h1.display-title {
-  span {
-    font-family: $font-family-alt;
+body, html {
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: z('default');
+  }
+
+  &::before {
+    border-top: solid 3px black;
+    left: $border-margin;
+    right: $border-margin;
+  }
+  &::after {
+    border-right: solid 3px black;
+    top: $border-margin;
+    bottom: $border-margin;
   }
 }
 
+html {
+  &::before {
+    top: $border-margin;
+  }
+  &::after {
+    right: $border-margin;
+  }
+}
+
+body {
+  padding: $border-margin;
+
+  &::before {
+    bottom: $border-margin;
+  }
+  &::after {
+    left: $border-margin;
+  }
+}
+
+h1.display-title {
+  font-family: $font-family-alt;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .centered-content {
-    min-height: 100vh;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column nowrap;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
 }
 
 main {
   margin: 50px 100px 20px;
-  padding: 20px;
+  padding: 20px 70px 20px 100px;
+  position: relative;
+  z-index: z('default');  
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 100%;
+    border-radius: 100%;
+    z-index: z('below');
+    // background-color: rgba($color: yellow, $alpha: 0.5);
+    background-image: linear-gradient(transparent, blue);
+    transform: translate(-50px, -20px);
+   
+  }
+  &::before {
+    // background-color: rgba($color: blue, $alpha: 0.5);
+    background-image: linear-gradient(transparent, yellow);
+    transform: translate(50px, -50px);
+  }
 }
 
 ol.ext-nav {
@@ -38,11 +103,10 @@ ol.ext-nav {
 }
 .meishi {
   position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
+  top: 0;
   right: 0;
   max-width: 100px;
-  margin: 10px;
+  margin: $border-margin;
   padding: 10px;
   writing-mode: vertical-rl;
 
