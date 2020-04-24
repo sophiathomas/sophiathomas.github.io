@@ -1,45 +1,3 @@
-$border-margin: 20px;
-
-body, html {
-  &::before, &::after {
-    content: "";
-    display: block;
-    position: fixed;
-    z-index: z('default');
-  }
-
-  &::before {
-    border-top: solid 3px black;
-    left: $border-margin;
-    right: $border-margin;
-  }
-  &::after {
-    border-right: solid 3px black;
-    top: $border-margin;
-    bottom: $border-margin;
-  }
-}
-
-html {
-  &::before {
-    top: $border-margin;
-  }
-  &::after {
-    right: $border-margin;
-  }
-}
-
-body {
-  padding: $border-margin;
-
-  &::before {
-    bottom: $border-margin;
-  }
-  &::after {
-    left: $border-margin;
-  }
-}
-
 h1.display-title {
   font-family: $font-family-alt;
   position: absolute;
@@ -106,7 +64,7 @@ ol.ext-nav {
   top: 0;
   right: 0;
   max-width: 100px;
-  margin: $border-margin;
+  margin: 20px;
   padding: 10px;
   writing-mode: vertical-rl;
 

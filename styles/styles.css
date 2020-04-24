@@ -42,32 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif; }
 
-body::before, body::after, html::before, html::after {
-  content: "";
-  display: block;
-  position: fixed;
-  z-index: 1; }
-body::before, html::before {
-  border-top: solid 3px black;
-  left: 20px;
-  right: 20px; }
-body::after, html::after {
-  border-right: solid 3px black;
-  top: 20px;
-  bottom: 20px; }
-
-html::before {
-  top: 20px; }
-html::after {
-  right: 20px; }
-
-body {
-  padding: 20px; }
-  body::before {
-    bottom: 20px; }
-  body::after {
-    left: 20px; }
-
 h1.display-title {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;

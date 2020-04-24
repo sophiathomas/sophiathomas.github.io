@@ -27,3 +27,49 @@
          + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
+
+/// Fixed border throughout the pages
+/// @access public
+/// @param {String} $margin - Margin around border
+/// @param {List} $border - Border style
+
+@mixin sitewide-border($margin: 20px, $border: 3px solid $black) {
+  body, html {
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: fixed;
+      z-index: z('default');
+    }
+
+    &::before {
+      border-top: $border;
+      left: $margin;
+      right: $margin;
+    }
+    &::after {
+      border-right: $border;
+      top: $margin;
+      bottom: $margin;
+    }
+  }
+
+  html {
+    &::before {
+      top: $margin;
+    }
+    &::after {
+      right: $margin;
+    }
+  }
+  body {
+    padding: $margin;
+  
+    &::before {
+      bottom: $margin;
+    }
+    &::after {
+      left: $margin;
+    }
+  }
+}
