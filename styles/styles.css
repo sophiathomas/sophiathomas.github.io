@@ -62,11 +62,11 @@ body {
 main {
   margin: 50px 100px;
   padding: 10px 20px;
-  position: relative;
-  z-index: 1;
-  border: 3px solid transparent;
-  border-image-source: linear-gradient(45deg, blue, yellow);
-  border-image-slice: 1; }
+  border: 6px solid white;
+  border-image-source: linear-gradient(120deg, white 40%, transparent, white);
+  border-image-slice: 1;
+  backdrop-filter: blur(30px);
+  background-clip: padding-box; }
 
 ol.ext-nav {
   list-style: none;
