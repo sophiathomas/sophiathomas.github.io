@@ -44,11 +44,12 @@ p {
 
 h1.display-title {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  top: -50px;
-  left: 20px;
   text-transform: uppercase;
   font-weight: bold; }
+
+body {
+  background: #020024;
+  background: radial-gradient(circle at 48% 65%, hotpink 30%, transparent 35%), radial-gradient(circle at 40% 45%, #f14d1b 30%, transparent 45%), radial-gradient(circle, hotpink 35%, transparent 65%), linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); }
 
 .centered-content {
   min-height: 100vh;
@@ -59,25 +60,13 @@ h1.display-title {
   flex-flow: column nowrap; }
 
 main {
-  margin: 50px 100px 20px;
-  padding: 20px 70px 20px 100px;
+  margin: 50px 100px;
+  padding: 10px 20px;
   position: relative;
-  z-index: 1; }
-  main::after, main::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding-top: 100%;
-    border-radius: 100%;
-    z-index: -1;
-    background-image: linear-gradient(transparent, blue);
-    transform: translate(-50px, -20px); }
-  main::before {
-    background-image: linear-gradient(transparent, yellow);
-    transform: translate(50px, -50px); }
+  z-index: 1;
+  border: 3px solid transparent;
+  border-image-source: linear-gradient(45deg, blue, yellow);
+  border-image-slice: 1; }
 
 ol.ext-nav {
   list-style: none;
