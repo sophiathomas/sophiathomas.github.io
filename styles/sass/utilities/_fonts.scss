@@ -13,6 +13,8 @@
         src: url("#{$file}.ttf") format("truetype"),
              url("#{$file}.woff") format("woff"),
              url("#{$file}.woff2") format("woff2");
+        unicode-range: map-get($properties, "range");
+        font-display: swap;
       }
     }
   }

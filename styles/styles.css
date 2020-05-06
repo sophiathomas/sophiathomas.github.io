@@ -5,17 +5,20 @@
   font-style: normal;
   font-weight: normal;
   src: url("../assets/fonts/Monoid/Monoid-Regular.ttf");
-  src: url("../assets/fonts/Monoid/Monoid-Regular.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Regular.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Regular.woff2") format("woff2"); }
+  src: url("../assets/fonts/Monoid/Monoid-Regular.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Regular.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Regular.woff2") format("woff2");
+  font-display: swap; }
 @font-face {
   font-family: "Monoid";
   font-weight: bold;
   src: url("../assets/fonts/Monoid/Monoid-Bold.ttf");
-  src: url("../assets/fonts/Monoid/Monoid-Bold.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Bold.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Bold.woff2") format("woff2"); }
+  src: url("../assets/fonts/Monoid/Monoid-Bold.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Bold.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Bold.woff2") format("woff2");
+  font-display: swap; }
 @font-face {
   font-family: "Monoid";
   font-style: italic;
   src: url("../assets/fonts/Monoid/Monoid-Italic.ttf");
-  src: url("../assets/fonts/Monoid/Monoid-Italic.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Italic.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Italic.woff2") format("woff2"); }
+  src: url("../assets/fonts/Monoid/Monoid-Italic.ttf") format("truetype"), url("../assets/fonts/Monoid/Monoid-Italic.woff") format("woff"), url("../assets/fonts/Monoid/Monoid-Italic.woff2") format("woff2");
+  font-display: swap; }
 @viewport {
   width: device-width; }
 html, body {
