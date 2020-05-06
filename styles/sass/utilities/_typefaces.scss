@@ -1,15 +1,15 @@
 /// Base font family
 /// @type List
-$font-family-base: 'Playfair Display', $font-family-serif;
+$font-family-base: "Noto Serif JP", serif !default;
 /// Accent text font family
 /// @type List
-$font-family-alt: 'Open Sans', $font-family-sans;
+$font-family-alt: "Monoid", $font-family-sans;
 /// Code (monospace) font family
 /// @type List
-$font-family-code:'Inconsolata', $font-family-mono;
-/// Code (monospace) font family
+$font-family-code: "Inconsolata" , $font-family-mono;
+/// Japanese font family
 /// @type List
-$font-family-jp: 'Noto Serif JP', serif !default;
+$font-family-jp: "Noto Serif JP", serif !default;
 
 // =====
 // @note: Must review line heights, rem, etc.

@@ -6,7 +6,7 @@
   'utilities/functions',
   'utilities/mixins',
   'utilities/fonts',
-  'utilities/typography',
+  'utilities/typefaces',
   'utilities/colours';
 
 // 2. Vendors
@@ -17,7 +17,7 @@
 // 3. Base stuff
 @import
   'base/reset',
-  'base/typesetting',
+  'base/typography',
   'base/helpers';
 
 // 4. Layout-related sections
