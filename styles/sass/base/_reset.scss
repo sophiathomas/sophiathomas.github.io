@@ -15,6 +15,7 @@ html, body {
 * {
   &:before,
   &:after { box-sizing: inherit; }
+  font-synthesis: none;
 }
 
 body {
@@ -29,7 +30,7 @@ img {
   max-width: 100%;
 }
 
-[lang="jp"] {
+:lang(jp) {
   font-family: $font-family-jp;
   p {
    margin: 0; 
