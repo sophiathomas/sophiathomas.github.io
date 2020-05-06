@@ -3,7 +3,7 @@
 /// @example scss - When using a CDN
 /// $asset-url: "http://cdn.example.com/assets";
 ///
-$assets-url: "../assets" !default;
+$assets-url: "../assets" !default; /* Relative to the generated CSS file */
 
 
 /// Google Fonts URL where all the fonts will be loaded
