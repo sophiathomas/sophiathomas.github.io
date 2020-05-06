@@ -1,10 +1,9 @@
-
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
-/// $asset-url: 'http://cdn.example.com/assets/';
+/// $asset-url: "http://cdn.example.com/assets";
 ///
-$asset-url: '../assets/' !default;
+$assets-url: "../assets" !default;
 
 
 /// Google Fonts URL where all the fonts will be loaded
@@ -19,10 +18,31 @@ $asset-url: '../assets/' !default;
 ///   font-family: 'Inconsolata', monospace;
 $google-fonts-url: 'https://fonts.googleapis.com/css2?family=Inconsolata&family=Noto+Serif+JP:wght@300&family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' !default;
 
+/// List of fonts imported through the @font-face
+/// @type Map
+/// @prop {String} keys - Keys are the name of the font family
+/// @prop {Map} values - The source urls of all the files needed to render the font, without their extensions
+/// @prop {Map} properties - The font properties that the files support
+$font-faces: (
+  "Monoid": (
+    "#{$assets-url}/fonts/Monoid/Monoid-Regular": (
+      "weight": normal,
+      "style": normal,
+    ),
+    "#{$assets-url}/fonts/Monoid/Monoid-Bold": (
+      "weight": bold,
+    ),
+    "#{$assets-url}/fonts/Monoid/Monoid-Italic": (
+      "style": italic,
+    ),
+  ),
+) !default;
+
 
 /// Breakpoints map
+/// @type Map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @prop {String} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
   'small': 320px,
   'medium': 768px,
@@ -51,8 +71,9 @@ $z-indexes: (
 
 
 /// Font weight map
+/// @type Map
 /// @prop {String} key - Keys are identifiers mapped to a given weight
-/// @prop {Map} values - Values are weights expressed in numeric weight
+/// @prop {Number} values - Values are weights expressed in numeric weight
 $font-weights: (
   'thin': 100,
   'xlight': 200,
