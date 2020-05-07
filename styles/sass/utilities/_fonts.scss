@@ -1,20 +1,26 @@
+/// Imports the @font-face rules from Google fonts
+/// @requires $google-fonts-url
 @if variable-exists(google-fonts-url) {
   @import url($google-fonts-url);
 }
 
+/// Generates the @font-face rules for local and external sources
+/// @requires $font-faces
+/// @requires {Function} font-src-declaration
 @if variable-exists(font-faces) {
-  @each $family, $files in $font-faces {
-    @each $file, $properties in $files {
-      @font-face {
-        font-family: $family;
-        font-style: map-get($properties, "style");
-        font-weight: map-get($properties, "weight");
-        src: url("#{$file}.ttf");
-        src: url("#{$file}.ttf") format("truetype"),
-             url("#{$file}.woff") format("woff"),
-             url("#{$file}.woff2") format("woff2");
-        unicode-range: map-get($properties, "range");
-        font-display: swap;
+  @each $family, $info in $font-faces {
+    @if(map-has-key($info, files)) { 
+      $files: map-get($info, files);
+      $formats: map-get($info, extensions);
+      @each $path, $properties in $files {
+        @font-face {
+          font-family: $family;
+          src: font-src-declaration($family, $path, $formats);
+          @each $property, $value in $properties {
+            #{$property}: #{$value};
+          }
+          font-display: swap;
+        }
       }
     }
   }

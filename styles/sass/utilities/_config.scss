@@ -25,15 +25,18 @@ $google-fonts-url: 'https://fonts.googleapis.com/css2?family=Inconsolata&family=
 /// @prop {Map} properties - The font properties that the files support
 $font-faces: (
   "Monoid": (
-    "#{$assets-url}/fonts/Monoid/Monoid-Regular": (
-      "weight": normal,
-      "style": normal,
-    ),
-    "#{$assets-url}/fonts/Monoid/Monoid-Bold": (
-      "weight": bold,
-    ),
-    "#{$assets-url}/fonts/Monoid/Monoid-Italic": (
-      "style": italic,
+    extensions: (ttf),
+    files: (
+      "#{$assets-url}/fonts/Monoid/Monoid-Regular": (
+        font-weight: normal,
+        font-style: normal,
+      ),
+      "#{$assets-url}/fonts/Monoid/Monoid-Bold": (
+        font-weight: bold,
+      ),
+      "#{$assets-url}/fonts/Monoid/Monoid-Italic": (
+        font-style: italic,
+      ),
     ),
   ),
 ) !default;

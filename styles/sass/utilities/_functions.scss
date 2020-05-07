@@ -7,7 +7,6 @@
   @return map-get($z-indexes, $layer);
 }
 
-
 /// Get a font-weight value from a weight name
 /// @access public
 /// @param {String} $weight - Weight's name
@@ -15,4 +14,42 @@
 /// @require $font-weights
 @function font-weight($weight) {
   @return map-get($font-weights, $weight);
+}
+
+/// Generate the source declaration for fonts
+/// @access public
+/// @param {String} $font-family - Name of font as used throughout the site
+/// @param {String} $path - Path where font fila can be found
+/// @param {List} $formats - MIME type, also know as the file extension or file format available for that font
+/// @return {String} $src - comma separated source declaration for each file formats
+/// @comment Reference: https://gist.github.com/fabricelejeune/bcdd3d4725d4e4cea672
+@function font-src-declaration($font-family, $path, $formats) {
+  $src: null;
+
+  @if $formats and (length($formats) != 0) {
+    $formats-map: (
+      eot:   "#{$path}.eot?#iefix" format("embedded-opentype"),
+      woff2: "#{$path}.woff2" format("woff2"),
+      woff:  "#{$path}.woff" format("woff"),
+      ttf:   "#{$path}.ttf" format("truetype"),
+      svg:   "#{$path}.svg##{$font-family}" format("svg")
+    );
+    @each $format in $formats {
+      $font-url: null; $font-format: null;
+      @if map-has-key($formats-map, $format) {
+        $values: map-get($formats-map, $format);
+        $font-url: nth($values, 1);
+        $font-format: nth($values, 2);
+      } @else {
+        $font-url: "#{$path}.#{$format}";
+        @warn("Unrecognized file format: #{$format}. Consider updating $formats-map map with new format. Proceeding with the following url: #{$font-url}");
+      }
+      $src: append($src, url($font-url) $font-format, $separator: comma);
+    }
+  } @else {
+    @warn("There is no formats defined. Using path as: #{$path} for source declaration.");
+    $src: url("#{$path}");
+  }
+
+  @return $src;
 }
