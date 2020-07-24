@@ -20,13 +20,16 @@ $google-fonts-url: 'https://fonts.googleapis.com/css2?family=Inconsolata&family=
 
 /// List of fonts imported through the @font-face
 /// @type Map
-/// @prop {String} keys - Keys are the name of the font family
+/// @prop {String} family - Keys are the name of the font family
 /// @prop {Map} values - The source urls of all the files needed to render the font, without their extensions
+/// @prop {String} extensions - List of available file formats for the font
+/// @prop {List} 
+/// @prop {Map} files - 
 /// @prop {Map} properties - The font properties that the files support
 $font-faces: (
   "Monoid": (
-    extensions: (ttf),
-    files: (
+    "extensions": (ttf),
+    "files": (
       "#{$assets-url}/fonts/Monoid/Monoid-Regular": (
         font-weight: normal,
         font-style: normal,
@@ -36,6 +39,39 @@ $font-faces: (
       ),
       "#{$assets-url}/fonts/Monoid/Monoid-Italic": (
         font-style: italic,
+      ),
+    ),
+  ),
+  "Tiempos Text": (
+    "extensions": (eot ttf woff),
+    "files": (
+      "#{$assets-url}/fonts/Tiempos/TiemposText-Regular": (
+        font-weight: normal,
+        font-style: normal,
+      ),
+      "#{$assets-url}/fonts/Tiempos/TiemposText-Bold": (
+        font-weight: bold,
+      ),
+      "#{$assets-url}/fonts/Tiempos/TiemposText-Italic": (
+        font-style: italic,
+      ),
+      "#{$assets-url}/fonts/Tiempos/TiemposText-BoldItalic": (
+        font-weight: bold,
+        font-style: italic,
+      ),
+    ),
+  ),
+  "Tiempos Headline": (
+    "extensions": (eot ttf woff),
+    "files": ( 
+      "#{$assets-url}/fonts/Tiempos/TiemposHeadline-Light": (
+        font-weight: 300,
+      ),
+      "#{$assets-url}/fonts/Tiempos/TiemposHeadline-Medium": (
+        font-weight: 500,
+      ),
+      "#{$assets-url}/fonts/Tiempos/TiemposHeadline-Black": (
+        font-weight: 900,
       ),
     ),
   ),
@@ -70,7 +106,6 @@ $z-indexes: (
   'default': 1,
   'below': -1,
 );
-
 
 
 /// Font weight map
