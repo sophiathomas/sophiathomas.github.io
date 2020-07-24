@@ -2,8 +2,6 @@
 
 html, body {
   background-color: $color-background;
-  font-family: $font-family-base;
-  color: $color-text;
   box-sizing: border-box; // Set up a decent box model on the root element
   vertical-align: baseline;
   height: 100%;
@@ -23,22 +21,10 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   min-height: 100%;
+  font-size: 18px;
 }
 
 img {
   height: auto;
   max-width: 100%;
-}
-
-:lang(jp) {
-  font-family: $font-family-jp;
-  p {
-   margin: 0; 
-  }
-}
-
-a {
-  background: transparent;
-  color: $color-link;
-  transition: color .2s;
 }

@@ -1,9 +1,27 @@
+body {
+  font-family: $font-family-base;
+  color: $color-text;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
-  font-weight: font-weight('medium');
+  font-weight: font-weight('regular');
 }
 
 p {
   font-family: $font-family-base;
-  font-weight: font-weight('regular');
+  font-weight: font-weight('normal');
+}
+
+a {
+  background: transparent;
+  color: $color-text;
+  transition: color .2s;
+}
+
+:lang(jp) {
+  font-family: $font-family-jp;
+  p {
+   margin: 0; 
+  }
 }
