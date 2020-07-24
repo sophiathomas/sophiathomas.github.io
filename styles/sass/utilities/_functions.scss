@@ -28,14 +28,18 @@
 
   @if $formats and (length($formats) != 0) {
     $formats-map: (
-      eot:   "#{$path}.eot?#iefix" format("embedded-opentype"),
-      woff2: "#{$path}.woff2" format("woff2"),
-      woff:  "#{$path}.woff" format("woff"),
-      ttf:   "#{$path}.ttf" format("truetype"),
-      svg:   "#{$path}.svg##{$font-family}" format("svg")
+      eot:    "#{$path}.eot?#iefix" format("embedded-opentype"),
+      woff2:  "#{$path}.woff2" format("woff2"),
+      woff:   "#{$path}.woff" format("woff"),
+      ttf:    "#{$path}.ttf" format("truetype"),
+      svg:    "#{$path}.svg##{$font-family}" format("svg"),
+      otf:    "#{$path}.otf" format("opentype"),
     );
+    
     @each $format in $formats {
-      $font-url: null; $font-format: null;
+      $font-url: null; 
+      $font-format: null;
+      
       @if map-has-key($formats-map, $format) {
         $values: map-get($formats-map, $format);
         $font-url: nth($values, 1);
@@ -44,6 +48,7 @@
         $font-url: "#{$path}.#{$format}";
         @warn("Unrecognized file format: #{$format}. Consider updating $formats-map map with new format. Proceeding with the following url: #{$font-url}");
       }
+
       $src: append($src, url($font-url) $font-format, $separator: comma);
     }
   } @else {
