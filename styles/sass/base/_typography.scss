@@ -6,6 +6,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
   font-weight: font-weight('regular');
+  color: $color-text-heading;
 }
 
 p {
@@ -17,6 +18,7 @@ a {
   background: transparent;
   color: $color-text;
   transition: color .2s;
+  font-style: italic;
 }
 
 :lang(jp) {

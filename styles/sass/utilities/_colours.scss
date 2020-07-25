@@ -3,44 +3,37 @@
 
 // descriptive colors
 // =============
-
-$hopbush:                   #c69;
-$bouquet:                   #b37399;
-$venus:                     #998099;
-$patina:                    #699;
-$nebula:                    #d2e1dd;
-$white:                     #fff;
-$dawn-pink:                 #f2ece4;
-$wafer:                     #e1d7d2;
-$iron:                      #dadbdf;
-$regent-grey:               #808c99;
-$pale-sky:                  #6b717f;
-$midnight-blue:             #036;
-$black:                     #000;
+// 034 Lemon Gate on https://webgradients.com/
+$white:      #fff;
+$black:      #000;
+$leaf:       #96fbc4; // #21916b;
+$peony:      #b21d73;
+$lemon:      #f9f586; // #fcf1af;
 
 // main color palette
 // =============
-$color-primary:             $hopbush;
-$color-secondary:           $bouquet;
-$color-accent:              $patina;
+$color-primary:             $black;
+$color-secondary:           $leaf;
+$color-accent:              $peony;
 $color-shadow:              rgba($black, .125);
-$color-note:                #666;
+$color-note:                lighten(red, .125);
 
 // Common colors
-$color-background:          $white;
-$color-background-shade:    $iron;
-$color-background-invert:   $hopbush;
-$color-text:                darken($pale-sky, 15);
-$color-text-weak:           $regent-grey;
-$color-text-strong:         $midnight-blue;
-$color-text-heading:        $regent-grey;
-$color-text-invert:         rgba($color-background, .75);
+$color-background:          lighten($leaf, 10);
+$color-background-gradient: lighten($lemon, 10);
+$color-background-shade:    darken($leaf, 10);
+$color-background-invert:   $black;
+$color-text:                $black;
+$color-text-weak:           lighten($black, 40);
+$color-text-strong:         $black;
+$color-text-heading:        darken($leaf, 45);
+$color-text-invert:         $white;
 $color-text-strong-invert:  $color-background;
 
 // Links
 $color-link:                $color-primary;
-$color-link-hover:          $midnight-blue;
-$color-link-visited:        $bouquet;
+$color-link-hover:          $peony;
+$color-link-visited:        $peony;
 
 // Code
 $color-code:                #333;
